@@ -1,0 +1,252 @@
+/* ===== VENTANA DE CUENTA Y COMPRAS ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 25; /* arriba del carrito (21), abajo de la notificación (30) */
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal__caja {
+  position: relative;
+  width: min(26rem, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.8rem 1.5rem 1.5rem;
+  background: var(--fondo-suave);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.modal__caja h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding-right: 2.5rem;
+}
+
+.modal__caja [hidden] {
+  display: none;
+}
+
+.modal__cerrar {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid var(--acento);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--texto);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal__cerrar:hover {
+  background: var(--acento);
+  color: var(--acento-texto);
+}
+
+/* ----- Pestañas ----- */
+.pestanas {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.pestana {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--texto);
+  font: 600 0.9rem "Manrope", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.pestana[aria-selected="true"] {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: var(--acento-texto);
+}
+
+/* ----- Formularios ----- */
+.modal__mensaje {
+  min-height: 1.4em;
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.modal__mensaje--error {
+  color: #ff8a80;
+}
+
+[data-theme="light"] .modal__mensaje--error {
+  color: #b3261e;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.campo input {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: var(--fondo);
+  color: var(--texto);
+  font: inherit;
+}
+
+.campo input:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+  border-color: var(--acento);
+}
+
+.btn-modal {
+  display: block;
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.8rem;
+  border: 2px solid var(--acento);
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--acento-texto);
+  font: 600 1rem "Manrope", system-ui, sans-serif;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.btn-modal:hover {
+  filter: brightness(1.1);
+}
+
+.btn-modal--linea {
+  background: transparent;
+  color: var(--texto);
+}
+
+.btn-modal--linea:hover {
+  background: var(--acento);
+  color: var(--acento-texto);
+  filter: none;
+}
+
+/* ----- Vista de cuenta ----- */
+.cuenta__nombre {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.cuenta__correo {
+  margin: 0 0 1.2rem;
+  color: var(--texto-suave);
+}
+
+/* ----- Historial de compras ----- */
+.pedido {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.pedido:last-child {
+  border-bottom: 0;
+}
+
+.pedido__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.3rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pedido__fecha {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.pedido__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pedido__lista li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.15rem 0;
+  font-size: 0.95rem;
+}
+
+.pedido__total {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.6rem 0 0;
+  font-size: 1.1rem;
+}
+
+.pedido__total strong {
+  color: var(--acento);
+}
+
+/* ----- Botón Finalizar compra (dentro del carrito) ----- */
+.carrito__comprar {
+  width: 100%;
+  margin-bottom: 0.6rem;
+  padding: 0.8rem;
+  border: 2px solid var(--acento);
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--acento-texto);
+  font: 600 1rem "Manrope", system-ui, sans-serif;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.carrito__comprar:hover {
+  filter: brightness(1.1);
+}
+
+/* ----- Nombre en el menú de tres puntitos ----- */
+.menu-cuenta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.menu-cuenta__nombre {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu-cuenta__nombre[hidden] {
+  display: none;
+}
+
+.con-sesion .menu-cuenta__etiqueta {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
