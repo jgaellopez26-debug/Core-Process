@@ -229,3 +229,5 @@
 
   dibujar();
 })();
+   const btn = document.querySelector('.btn-finalizar');
+btn.disabled = true;
