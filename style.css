@@ -878,5 +878,19 @@ body {
   top: 16px;
   right: 16px;
   z-index: 10;
+  .pie__insta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  transition: color .2s ease, opacity .2s ease;
+}
+.pie__insta:hover {
+  color: var(--barra-oro, #c8a45c);
+  opacity: 1;
+}
 }
 }
