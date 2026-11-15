@@ -830,4 +830,53 @@ body.en-seccion .inicio {
   cursor: not-allowed;
   opacity: 0.7;
   pointer-events: none;
+  :root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --card: #f4f4f6;
+  --accent: #e63946;
+  --border: #e2e2e6;
+}
+
+[data-theme="dark"] {
+  --bg: #0d0d10;
+  --text: #f2f2f5;
+  --card: #1a1a20;
+  --accent: #ff4d5a;
+  --border: #2a2a32;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background .3s ease, color .3s ease;
+}
+
+.card, section, footer {
+  background: var(--card);
+  border-color: var(--border);
+  transition: background .3s ease;
+}
+
+#theme-toggle {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform .2s ease;
+  .hero { position: relative; }
+}
+#theme-toggle:hover { transform: scale(1.1) rotate(15deg); }
+.hero { position: relative; }
+
+#theme-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}
 }
