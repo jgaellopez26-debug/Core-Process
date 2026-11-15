@@ -9,8 +9,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="cuenta.css">
+  <link rel="stylesheet" href="barra.css">
 </head>
 <body>
+  <div class="barra" id="barra">
+  <a class="barra__logo" href="#inicio">Core Process</a>
+
+  <nav class="barra__links">
+    <a href="#suplementos">Suplementos</a>
+    <a href="#accesorios">Accesorios</a>
+  </nav>
+
+  <div class="barra__acciones">
+    <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    <button type="button" class="barra__btn" id="barra-compras">Mis compras</button>
+    <button type="button" class="barra__btn" id="barra-entrar">Iniciar sesión</button>
+    <button type="button" class="barra__btn barra__btn--oro" id="barra-registro">Crear cuenta</button>
+    <button type="button" class="barra__btn barra__carrito" id="barra-carrito" aria-label="Mi carrito">
+      🛒 <span class="barra__contador" id="barra-contador">0</span>
+    </button>
+  </div>
+</div>
 
   <!-- PANTALLA DE INICIO -->
   <header class="inicio" id="inicio">
@@ -304,6 +323,7 @@
   <script src="secciones.js"></script>
   <script src="detalle.js"></script>
   <script src="tamanos.js"></script>
+  <script src="barra.js"></script>
 </body>
 </html>
 <button class="btn-finalizar" disabled>Finalizar compra</button>
