@@ -891,6 +891,18 @@ body {
 .pie__insta:hover {
   color: var(--barra-oro, #c8a45c);
   opacity: 1;
+  html {
+    scroll-behavior: smooth;
+  }
+[id]{
+  scroll-margin-top: 80px;
+.aviso {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  text-align: center;
+  margin-top: 20px;
+}
+}
 }
 }
 }
