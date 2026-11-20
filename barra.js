@@ -46,7 +46,8 @@
   }
   if (nombreViejo) {
     new MutationObserver(syncCuenta).observe(nombreViejo, {
-      attributes: true, childList: true, characterData: true, subtree: true
+      attributes: true, childList: true, characterData: true, subtree: true,
+  
     });
   }
   syncCuenta();
